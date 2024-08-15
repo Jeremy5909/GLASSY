@@ -1,18 +1,11 @@
 package com.superherczeg.glassy.portal;
 
-import com.google.common.collect.ImmutableMap;
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.DebugScreenOverlay;
-import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.joml.Vector3f;
-import org.lwjgl.opengl.GL11;
 
 public class PortalInfo {
     public PortalCarrier parent;
@@ -91,7 +84,6 @@ public class PortalInfo {
         readSelfInfo(tag);
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void render(Level world, double x, double y, double z, float f) {
         Minecraft mc = Minecraft.getInstance();
         DebugScreenOverlay debug = mc.gui.getDebugOverlay();
@@ -118,7 +110,6 @@ public class PortalInfo {
         RenderSystem.disableBlend();
     }
 
-    @OnlyIn(Dist.CLIENT)
     public void orientPlane() {
         // TODO
     }
